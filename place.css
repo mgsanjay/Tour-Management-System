@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap');
+*{
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    font-family:  'Catamaran', sans-serif;
+}
+.header{
+    display:grid;
+    background-color: #f5f5f5;
+    grid-template-columns: 85% 15%;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.ltext{
+    font-family: 'Catamaran';
+    font-weight: bold;
+    font-size: 45px;
+    margin-top:5px;
+    margin-left: 20px;
+}
+.link{
+    margin-top:5px;
+}
+span{
+    font-family: 'Yeon Sung',sans-serif;
+    color:#36096b;
+    font-weight: bold;
+    font-size: 40px;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    margin-left:50px;
+    margin-right:50px;
+}
+.cont{
+    border:0.1px solid #bfbfbf;
+    border-radius: 10px;
+    box-shadow: 5px 8px 2px #aaa;
+    margin-bottom: 35px;
+    text-align: center;
+}
+img{
+    padding-top:15px;
+    width: 550px;
+    height: 300px;
+}
+input[type=text]{
+    display:block;
+    background-color: white;
+    border: 1px;
+    margin-top: 8px;
+	padding: 8px 0px;
+	width: 150px;
+}
+input[type=submit]{
+    border-radius: 20px;
+	border: 1px solid #36096d;
+	background-color: #36096d;
+    color: #FFFFFF;
+    margin-top: 20px;
+	font-size: 15px;
+	font-weight: bold;
+    padding: 10px 18px;
+    letter-spacing: 1px;
+    margin-bottom:15px;
+}
+input[type=submit]:hover{
+    background-color: #eee;
+    color: #36096d;
+}
+
+.footer{
+    background-color: #36096b;
+    color:white;
+    text-align: center;
+    margin-top:20px;
+    padding:10px 0px;
+}

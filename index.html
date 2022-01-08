@@ -1,0 +1,51 @@
+<?php
+session_start();
+include 'conn.php';
+$count=0;
+if(isset($_POST['login'])&&isset($_POST['uname'])&&isset($_POST['pass']))
+{
+    $name=$_POST['uname'];
+    $pwd=$_POST['pass'];
+    $query = "SELECT * FROM user WHERE uname='$name' AND upass='$pwd'";
+    $_SESSION['user']=$name;
+    $res=mysqli_query($conn, $query);
+    if(mysqli_num_rows($res) == 1)
+    {
+        $myarr=mysqli_fetch_assoc($res);
+        $_SESSION['phone']=$myarr['uphone'];
+        $count=0;
+        $_SESSION["user"]=$name;
+        header('Location:home.php');
+    }
+    else{
+        $count=1;
+    }
+}
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<link rel="stylesheet" href="index.css">
+</head>
+<body>
+<h2 id="error"></h2>
+<div>
+<form method="post">
+<h1>Login</h1>
+<input type="text" name="uname" placeholder="Username" required>
+<input type="password" name="pass" placeholder="Password" required>
+<input type="submit" name="login" value="login" id="login">
+<a href='register.php'>New User? Sign In</a>
+</form>
+</div>
+<script>
+var val = "<?php echo $count ?>";
+if(val==1)
+{
+    res="<p>Invalid Username or Password</p>";
+    document.getElementById('error').innerHTML=res;
+}
+</script>
+</body>
+</html>
